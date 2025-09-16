@@ -1,7 +1,11 @@
 /* --- Basic Setup & Fonts --- */
 :root {
-    --card-width: 11vw; 
-    --card-aspect-ratio: 1.8; 
+    --card-width: 9vw; 
+    --card-aspect-ratio: 2.0; 
+}
+html {
+    position: relative;
+    overflow: hidden; /* Important for the new animation */
 }
 body {
     background-color: #f0f2f5;
@@ -10,11 +14,72 @@ body {
     padding: 20px;
     overflow-x: hidden;
 }
+
+/* These rules create the animated 'X' background */
+@keyframes move-comet {
+  0% { transform: translate(-100%, -100%) rotate(35deg); }
+  100% { transform: translate(100%, 100%) rotate(35deg); }
+}
+@keyframes move-comet-reverse {
+  0% { transform: translate(100%, -100%) rotate(-35deg); }
+  100% { transform: translate(-100%, 100%) rotate(-35deg); }
+}
+
+/* This is the FIRST 'X' */
+body::before,
+body::after {
+    content: '';
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 150%;
+    height: 24px;
+    background: linear-gradient(to right, transparent, #ff3b3b, transparent);
+    z-index: -1;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+body::before {
+    animation-name: move-comet;
+}
+body::after {
+    animation-name: move-comet-reverse;
+}
+
+/* NEW: This is the SECOND 'X' that fills the gap */
+html::before,
+html::after {
+    content: '';
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 150%;
+    height: 24px;
+    background: linear-gradient(to right, transparent, #ff3b3b, transparent);
+    z-index: -1;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-delay: -2.5s; /* This starts the second X halfway through */
+}
+html::before {
+    animation-name: move-comet;
+}
+html::after {
+    animation-name: move-comet-reverse;
+}
+
+
 .site-container {
     width: 90%;
     max-width: 1200px; 
     margin: 40px auto; 
+    position: relative;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
+
 header h1 {
     font-family: 'Oswald', sans-serif;
     font-size: 3.4rem; 
@@ -32,7 +97,6 @@ header h1 {
     position: relative; 
     overflow: hidden;
 }
-
 .grid-row {
     display: flex;
     justify-content: center;
@@ -50,7 +114,7 @@ header h1 {
     cursor: pointer;
     z-index: 2; 
     position: relative;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease, filter 0.5s ease;
 }
 .character-card.hide {
     opacity: 0;
@@ -66,6 +130,8 @@ header h1 {
     overflow: hidden;
     transition: transform 0.3s ease-in-out;
     transform: skewX(-40deg); 
+    box-shadow: inset 0 0 0 3px rgba(0, 0, 0, 0.2);
+    border: 2px solid #000;
 }
 .card-bg {
     width: 100%;
@@ -78,39 +144,41 @@ header h1 {
 .character-card:hover .card-bg {
     transform: skewX(40deg) scale(1.9);
 }
-
-/* MODIFIED: Set the width to match the cards and adjusted position */
 .top-row::before, .top-row::after,
 .bottom-row::before, .bottom-row::after {
     content: '';
     position: absolute;
     background-color: #111;
-    width: var(--card-width); /* Set width to match cards */
+    width: var(--card-width);
     height: 100%; 
     z-index: 1;
 }
 .top-row::before {
     top: 0;
-    left: -25px; /* Adjusted position */
+    left: -25px;
     transform: skewX(40deg);
 }
 .top-row::after {
     top: 0;
-    right: -25px; /* Adjusted position */
+    right: -25px;
     transform: skewX(40deg);
 }
 .bottom-row::before {
     bottom: 0;
-    left: -25px; /* Adjusted position */
+    left: -25px;
     transform: skewX(40deg);
 }
 .bottom-row::after {
     bottom: 0;
-    right: -25px; /* Adjusted position */
+    right: -25px;
     transform: skewX(40deg);
 }
-
-
+.character-showcase.grid-hover-effect .character-card {
+    filter: grayscale(100%);
+}
+.character-showcase.grid-hover-effect .character-card:hover {
+    filter: grayscale(0%);
+}
 /* --- Card Content Styling --- */
 .rank-number {
     position: absolute;
