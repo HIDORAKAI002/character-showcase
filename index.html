@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Showcase</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="site-container">
+        <header>
+            <h1>CHARACTERS</h1>
+        </header>
+
+        <main class="character-showcase">
+            <div class="grid-row top-row">
+                <a href="#" class="character-card" data-index="0">
+                    <div class="card-inner">
+                        <div class="card-bg" data-flip-id="img-0" style="background-image: url('images/Dinesh.jpg');"></div>
+                        <span class="rank-number">01</span>
+                        <div class="character-name-tag">Dinesh</div>
+                    </div>
+                </a>
+                <a href="#" class="character-card" data-index="1">
+                    <div class="card-inner">
+                        <div class="card-bg" data-flip-id="img-1" style="background-image: url('images/Snehith.jpg');"></div>
+                        <span class="rank-number">02</span>
+                        <div class="character-name-tag">Snehith</div>
+                    </div>
+                </a>
+                <a href="#" class="character-card" data-index="2">
+                    <div class="card-inner">
+                        <div class="card-bg" data-flip-id="img-2" style="background-image: url('images/cris_samuel.jpg');"></div>
+                        <span class="rank-number">03</span>
+                        <div class="character-name-tag">Cris Samuel</div>
+                    </div>
+                </a>
+                <a href="#" class="character-card" data-index="3">
+                    <div class="card-inner">
+                        <div class="card-bg" data-flip-id="img-3" style="background-image: url('images/Amarnadh.jpg');"></div>
+                        <span class="rank-number">04</span>
+                        <div class="character-name-tag">Amarnadh</div>
+                    </div>
+                </a>
+                <a href="#" class="character-card" data-index="4">
+                    <div class="card-inner">
+                        <div class="card-bg" data-flip-id="img-4" style="background-image: url('images/venkat_sai.jpg');"></div>
+                        <span class="rank-number">05</span>
+                        <div class="character-name-tag">Venkat Sai</div>
+                    </div>
+                </a>
+            </div>
+            <div class="grid-row bottom-row">
+                 <a href="#" class="character-card" data-index="5">
+                    <div class="card-inner">
+                        <div class="card-bg" data-flip-id="img-5" style="background-image: url('images/Sudhanshu.jpg');"></div>
+                        <span class="rank-number">06</span>
+                        <div class="character-name-tag">Sudhanshu</div>
+                    </div>
+                </a>
+                <a href="#" class="character-card" data-index="6">
+                    <div class="card-inner">
+                        <div class="card-bg" data-flip-id="img-6" style="background-image: url('images/deva_prasad.jpg');"></div>
+                        <span class="rank-number">07</span>
+                        <div class="character-name-tag">Deva Prasad</div>
+                    </div>
+                </a>
+                <a href="#" class="character-card" data-index="7">
+                    <div class="card-inner">
+                        <div class="card-bg" data-flip-id="img-7" style="background-image: url('images/yoga_nandha.jpg');"></div>
+                        <span class="rank-number">08</span>
+                        <div class="character-name-tag">Yoga Nandha</div>
+                    </div>
+                </a>
+                <a href="#" class="character-card" data-index="8">
+                    <div class="card-inner">
+                        <div class="card-bg" data-flip-id="img-8" style="background-image: url('images/Karthikeya.jpg');"></div>
+                        <span class="rank-number">09</span>
+                        <div class="character-name-tag">Karthikeya</div>
+                    </div>
+                </a>
+                 <a href="#" class="character-card" data-index="9">
+                    <div class="card-inner">
+                        <div class="card-bg" data-flip-id="img-9" style="background-image: url('images/Chinnababu.jpg');"></div>
+                        <span class="rank-number">10</span>
+                        <div class="character-name-tag">Chinnababu</div>
+                    </div>
+                </a>
+            </div>
+        </main>
+    </div>
+
+    <section id="detail-page">
+        <div class="detail-content">
+            <div class="detail-text">
+                <span class="detail-rank-number">01</span>
+                <h1 class="detail-character-name">Dinesh</h1>
+                <p class="detail-bio">This is the biography...</p>
+            </div>
+            <div class="detail-image-container">
+                <img src="images/Dinesh.jpg" alt="Character Image" class="detail-character-image">
+            </div>
+        </div>
+        <button id="close-btn">X</button>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
