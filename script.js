@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cards = document.querySelectorAll('.character-card');
     const detailPage = document.querySelector('#detail-page');
     const closeBtn = document.querySelector('#close-btn');
+    const mainContent = document.querySelector('.character-showcase'); // Get main container
     
     const detailRank = detailPage.querySelector('.detail-rank-number');
     const detailName = detailPage.querySelector('.detail-character-name');
@@ -66,31 +67,36 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- CLOSE ANIMATION (Corrected Logic) ---
+    // --- CLOSE ANIMATION ---
     closeBtn.addEventListener('click', () => {
         if (!activeCard) return;
 
         const cardImage = activeCard.querySelector('.card-bg');
         detailImage.setAttribute('data-flip-id', cardImage.getAttribute('data-flip-id'));
         
-        // 1. Get the state of all elements in their final position
         const state = Flip.getState([cardImage, detailImage, detailTextElements]);
 
-        // 2. Immediately change the classes to the initial layout
         detailPage.classList.remove('active');
         activeCard.classList.remove('hide');
 
-        // 3. Animate FROM the state we captured TO the new state
         Flip.from(state, {
             duration: 0.7,
             ease: "power3.inOut",
             absolute: true,
-            // Animate the text elements out as they "leave" the scene
             onLeave: elements => gsap.to(elements, { 
                 opacity: 0, 
                 y: -40,
-                stagger: 0.05
+                stagger: 0.1
             })
         });
+    });
+    
+    // NEW: Logic for the grayscale hover effect
+    mainContent.addEventListener('mouseenter', () => {
+        mainContent.classList.add('grid-hover-effect');
+    });
+    
+    mainContent.addEventListener('mouseleave', () => {
+        mainContent.classList.remove('grid-hover-effect');
     });
 });
