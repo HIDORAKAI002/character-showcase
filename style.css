@@ -1,11 +1,14 @@
-/* --- Basic Setup & Fonts --- */
 :root {
     --card-width: 9vw; 
     --card-aspect-ratio: 2.0; 
 }
 html {
     position: relative;
+<<<<<<< HEAD
+    overflow: hidden;
+=======
     overflow: hidden; /* Important for the new animation */
+>>>>>>> d11420ecad20483cc0f85f20ad07b0e6e698dc54
 }
 body {
     background-color: #f0f2f5;
@@ -14,8 +17,11 @@ body {
     padding: 20px;
     overflow-x: hidden;
 }
+<<<<<<< HEAD
+=======
 
 /* These rules create the animated 'X' background */
+>>>>>>> d11420ecad20483cc0f85f20ad07b0e6e698dc54
 @keyframes move-comet {
   0% { transform: translate(-100%, -100%) rotate(35deg); }
   100% { transform: translate(100%, 100%) rotate(35deg); }
@@ -24,8 +30,11 @@ body {
   0% { transform: translate(100%, -100%) rotate(-35deg); }
   100% { transform: translate(-100%, 100%) rotate(-35deg); }
 }
+<<<<<<< HEAD
+=======
 
 /* This is the FIRST 'X' */
+>>>>>>> d11420ecad20483cc0f85f20ad07b0e6e698dc54
 body::before,
 body::after {
     content: '';
@@ -45,6 +54,10 @@ body::before {
 }
 body::after {
     animation-name: move-comet-reverse;
+<<<<<<< HEAD
+    animation-delay: -2.5s;
+}
+=======
 }
 
 /* NEW: This is the SECOND 'X' that fills the gap */
@@ -71,13 +84,17 @@ html::after {
 }
 
 
+>>>>>>> d11420ecad20483cc0f85f20ad07b0e6e698dc54
 .site-container {
     width: 90%;
     max-width: 1200px; 
     margin: 40px auto; 
     position: relative;
+<<<<<<< HEAD
+=======
     padding: 0 20px;
     box-sizing: border-box;
+>>>>>>> d11420ecad20483cc0f85f20ad07b0e6e698dc54
 }
 
 header h1 {
@@ -88,7 +105,6 @@ header h1 {
     letter-spacing: 5px;
     margin-bottom: 20px;
 }
-/* --- Main Showcase Container --- */
 .character-showcase {
     display: flex;
     flex-direction: column;
@@ -106,7 +122,6 @@ header h1 {
 .bottom-row {
     margin-top: 20px; 
 }
-/* --- The Character Card --- */
 .character-card {
     width: var(--card-width);
     height: calc(var(--card-width) * var(--card-aspect-ratio));
@@ -115,10 +130,13 @@ header h1 {
     z-index: 2; 
     position: relative;
     transition: opacity 0.3s ease, filter 0.5s ease;
+<<<<<<< HEAD
+=======
 }
 .character-card.hide {
     opacity: 0;
     pointer-events: none;
+>>>>>>> d11420ecad20483cc0f85f20ad07b0e6e698dc54
 }
 .character-card:hover {
     z-index: 10;
@@ -137,7 +155,6 @@ header h1 {
     width: 100%;
     height: 100%;
     background-size: cover;
-    background-position: center;
     transition: transform 0.4s ease;
     transform: skewX(40deg) scale(1.8); 
 }
@@ -173,6 +190,14 @@ header h1 {
     right: -25px;
     transform: skewX(40deg);
 }
+<<<<<<< HEAD
+.character-showcase.grid-is-active .character-card {
+    filter: grayscale(100%);
+}
+.character-showcase.grid-is-active .character-card.is-hovered {
+    filter: grayscale(0%);
+}
+=======
 .character-showcase.grid-hover-effect .character-card {
     filter: grayscale(100%);
 }
@@ -180,6 +205,7 @@ header h1 {
     filter: grayscale(0%);
 }
 /* --- Card Content Styling --- */
+>>>>>>> d11420ecad20483cc0f85f20ad07b0e6e698dc54
 .rank-number {
     position: absolute;
     bottom: -15px;
@@ -206,43 +232,19 @@ header h1 {
     z-index: 3;
     transform: skewX(30deg); 
 }
-/* --- Responsiveness --- */
 @media (max-width: 900px) {
-    header h1 {
-        font-size: 3rem;
-    }
-    .grid-row {
-        flex-wrap: wrap;
-    }
-    .bottom-row {
-        margin-top: 0;
-    }
-    .character-card {
-        width: 40vw;
-        height: calc(40vw * var(--card-aspect-ratio));
-        margin: 10px;
-    }
-    .card-inner {
-        transform: skewX(-15deg); 
-    }
-    .card-bg, .rank-number {
-        transform: skewX(15deg) scale(1.2); 
-    }
-    .character-name-tag {
-        transform: skewX(0deg);
-    }
-    .rank-number {
-        font-size: 15vw;
-    }
+    header h1 {font-size: 3rem;}
+    .grid-row {flex-wrap: wrap;}
+    .bottom-row {margin-top: 0;}
+    .character-card {width: 40vw; height: calc(40vw * var(--card-aspect-ratio)); margin: 10px;}
+    .card-inner {transform: skewX(-15deg);}
+    .card-bg, .rank-number {transform: skewX(15deg) scale(1.2);}
+    .character-name-tag {transform: skewX(0deg);}
+    .rank-number {font-size: 15vw;}
 }
 @media (max-width: 600px) {
-    .character-card {
-        width: 80vw;
-        height: calc(80vw * var(--card-aspect-ratio));
-    }
+    .character-card {width: 80vw; height: calc(80vw * var(--card-aspect-ratio));}
 }
-
-/* --- Detail Page Styling --- */
 #detail-page {
     position: fixed;
     top: 0;
@@ -289,31 +291,92 @@ header h1 {
     height: 100%;
     gap: 5vw;
 }
-.detail-text {
-    flex-basis: 50%;
-    max-width: 500px;
-}
-.detail-rank-number {
-    font-family: 'Oswald', sans-serif;
-    font-size: 5rem;
-    color: #ff6347;
-}
-.detail-character-name {
-    font-family: 'Oswald', sans-serif;
-    font-size: 6rem;
-    margin: -20px 0 20px 0;
-}
-.detail-bio {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
 .detail-image-container {
     flex-basis: 40%;
+    position: relative;
     overflow: hidden;
 }
 .detail-character-image {
     width: 100%;
     height: auto;
     object-fit: contain;
+<<<<<<< HEAD
+    display: block;
 }
+.gallery-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.gallery-arrow:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+.prev-btn {left: 10px;}
+.next-btn {right: 10px;}
+.detail-text-content {
+    flex-basis: 50%;
+    max-width: 600px;
+}
+.detail-name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0;
+}
+.detail-role {
+    font-size: 1.5rem;
+    color: #ccc;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+.detail-info-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px 20px;
+    margin-bottom: 30px;
+}
+.info-label {
+    font-weight: 700;
+    color: #888;
+    text-transform: uppercase;
+}
+.detail-quote {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin: 0 0 30px 0;
+    padding-left: 20px;
+    border-left: 3px solid #ff3b3b;
+}
+.detail-bio {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+.detail-hobbies h3 {
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 10px;
+}
+.detail-hobbies-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.detail-hobbies-list li {
+    background-color: #333;
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+}
+=======
+}
+>>>>>>> d11420ecad20483cc0f85f20ad07b0e6e698dc54
