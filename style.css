@@ -4,11 +4,7 @@
 }
 html {
     position: relative;
-<<<<<<< HEAD
     overflow: hidden;
-=======
-    overflow: hidden; /* Important for the new animation */
->>>>>>> d11420ecad20483cc0f85f20ad07b0e6e698dc54
 }
 body {
     background-color: #f0f2f5;
@@ -17,11 +13,6 @@ body {
     padding: 20px;
     overflow-x: hidden;
 }
-<<<<<<< HEAD
-=======
-
-/* These rules create the animated 'X' background */
->>>>>>> d11420ecad20483cc0f85f20ad07b0e6e698dc54
 @keyframes move-comet {
   0% { transform: translate(-100%, -100%) rotate(35deg); }
   100% { transform: translate(100%, 100%) rotate(35deg); }
@@ -30,11 +21,6 @@ body {
   0% { transform: translate(100%, -100%) rotate(-35deg); }
   100% { transform: translate(-100%, 100%) rotate(-35deg); }
 }
-<<<<<<< HEAD
-=======
-
-/* This is the FIRST 'X' */
->>>>>>> d11420ecad20483cc0f85f20ad07b0e6e698dc54
 body::before,
 body::after {
     content: '';
@@ -54,49 +40,14 @@ body::before {
 }
 body::after {
     animation-name: move-comet-reverse;
-<<<<<<< HEAD
     animation-delay: -2.5s;
 }
-=======
-}
-
-/* NEW: This is the SECOND 'X' that fills the gap */
-html::before,
-html::after {
-    content: '';
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 150%;
-    height: 24px;
-    background: linear-gradient(to right, transparent, #ff3b3b, transparent);
-    z-index: -1;
-    animation-duration: 5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-delay: -2.5s; /* This starts the second X halfway through */
-}
-html::before {
-    animation-name: move-comet;
-}
-html::after {
-    animation-name: move-comet-reverse;
-}
-
-
->>>>>>> d11420ecad20483cc0f85f20ad07b0e6e698dc54
 .site-container {
     width: 90%;
     max-width: 1200px; 
     margin: 40px auto; 
     position: relative;
-<<<<<<< HEAD
-=======
-    padding: 0 20px;
-    box-sizing: border-box;
->>>>>>> d11420ecad20483cc0f85f20ad07b0e6e698dc54
 }
-
 header h1 {
     font-family: 'Oswald', sans-serif;
     font-size: 3.4rem; 
@@ -130,13 +81,6 @@ header h1 {
     z-index: 2; 
     position: relative;
     transition: opacity 0.3s ease, filter 0.5s ease;
-<<<<<<< HEAD
-=======
-}
-.character-card.hide {
-    opacity: 0;
-    pointer-events: none;
->>>>>>> d11420ecad20483cc0f85f20ad07b0e6e698dc54
 }
 .character-card:hover {
     z-index: 10;
@@ -190,22 +134,12 @@ header h1 {
     right: -25px;
     transform: skewX(40deg);
 }
-<<<<<<< HEAD
 .character-showcase.grid-is-active .character-card {
     filter: grayscale(100%);
 }
 .character-showcase.grid-is-active .character-card.is-hovered {
     filter: grayscale(0%);
 }
-=======
-.character-showcase.grid-hover-effect .character-card {
-    filter: grayscale(100%);
-}
-.character-showcase.grid-hover-effect .character-card:hover {
-    filter: grayscale(0%);
-}
-/* --- Card Content Styling --- */
->>>>>>> d11420ecad20483cc0f85f20ad07b0e6e698dc54
 .rank-number {
     position: absolute;
     bottom: -15px;
@@ -300,7 +234,6 @@ header h1 {
     width: 100%;
     height: auto;
     object-fit: contain;
-<<<<<<< HEAD
     display: block;
 }
 .gallery-arrow {
@@ -377,6 +310,3 @@ header h1 {
     border-radius: 15px;
     font-size: 0.9rem;
 }
-=======
-}
->>>>>>> d11420ecad20483cc0f85f20ad07b0e6e698dc54
