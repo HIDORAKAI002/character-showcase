@@ -267,15 +267,12 @@ header h1 {
     object-fit: contain;
     display: block;
 }
-
-/* NEW video element styling */
 .detail-character-video {
     width: 100%;
     height: auto;
     object-fit: contain;
     display: none;
 }
-
 .gallery-arrow {
     position: absolute;
     top: 50%;
